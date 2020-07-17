@@ -9,7 +9,7 @@ function getQuote() {
             var container = document.querySelector('#container');
             var ul = document.createElement('ul');
 
-            data.statuses.forEach(function (item) {
+            data.statuses.list.forEach(function (item) {
                 var li = document.createElement('li');
 
                 li.textContent = item;
