@@ -5,8 +5,17 @@ function getQuote() {
         .then((resp) => resp.json())
         .then(function (data) {
             document.getElementById("status").innerHTML = data.status;
-            document.getElementById("last_status").innerHTML = data.statuses.list[1];
-            document.getElementById("last_status2").innerHTML = data.statuses.list[2];
-            document.getElementById("last_status3").innerHTML = data.statuses.list[3];
+        
+            var container = document.querySelector('#container');
+            var ul = document.createElement('ul');
+
+            data.statuses.forEach(function (item) {
+                var li = document.createElement('li');
+
+                li.textContent = item;
+                ul.appendChild(li);
+            });
+
+            container.appendChild(ul);
         });
 }
