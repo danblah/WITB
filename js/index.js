@@ -5,6 +5,6 @@ function getQuote() {
         .then((resp) => resp.json())
         .then(function (data) {
             document.getElementById("status").innerHTML = data.status;
-            document.getElementById("last_status1").innerHTML = data.statuses.list[1];
+            document.getElementById("last_status").innerHTML = data.statuses.list[1];
         });
 }
